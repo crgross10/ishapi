@@ -6,7 +6,7 @@ Como rodar o projeto? <br>
 2. Instale o PipEnv: <br>
   - pip install pipenv <br>
 
-3. No diretório do seu projeto ative o virtualenv: <br>
+3. No diretório do seu projeto (onde estiver o arquivo Pipfile) ative o virtualenv: <br>
   - pipenv shell <br>
 
 4. Instale as dependências: <br>
