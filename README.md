@@ -10,7 +10,7 @@ Como rodar o projeto? <br>
   - pipenv shell <br>
 
 4. Instale as dependências: <br>
-  - pipenv install --dev <br>
+  - pipenv install <br>
 
 5. Rode o projeto: <br>
   - uvicorn main:app --reload
