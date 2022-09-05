@@ -66,9 +66,8 @@ def get_list_musics(temperature):
     items = data['items']
   
     for i in items:
-        if isinstance(i, dict):
-            for key, value in i.items():
-                if key=='track':
-                    tracks.update({value['name'] : value['external_urls']['spotify']})
+        for key, value in i.items():
+            if key=='track':
+                 tracks.update({value['name'] : value['external_urls']['spotify']})
     
     return tracks                
