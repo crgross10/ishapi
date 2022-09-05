@@ -27,7 +27,7 @@ def playlist(city: str=None, lat: str=None, lon: str=None):
     response = requests.get(url)
     data = response.json()
     
-    if data['weather'][0]['id'] == 500:
+    if data['sys']['country'] == 'IT':
         return {'detail': 'Não foi possivel localizar a playlist. Verifique os dados informados!'}
 
     return get_list_musics(data['main']['temp'])
