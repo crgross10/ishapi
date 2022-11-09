@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, File
 import requests
 import json 
 import os
@@ -71,3 +71,24 @@ def get_list_musics(temperature):
                  tracks.update({value['name'] : value['external_urls']['spotify']})
     
     return tracks                
+
+@app.post("/teste")
+def teste(file: bytes = File()):
+
+    url = f"https://api.nxcd.app/full-ocr/v4"
+
+    headers = {"Content-Type": "application/json",
+                    "Authorization": "ApiKey 620b9b87d47876973d0dc55c:7q7N5zgbkrCwJms2GnFZo017"}
+    payload = {
+                "base64": {
+                    "fileName": file
+                }
+            }
+
+
+    response = requests.post(url, headers=headers, json=payload, timeout=None)
+            
+    response_json = response.json() 
+        
+    print(response.json())
+    return response_json
